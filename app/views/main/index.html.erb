@@ -1,0 +1,35 @@
+<% if user_signed_in? %>
+
+
+<div style="width:50%">
+<% if @result.blank? %>
+	Выберите категории
+	<% else %>
+	<% @result.each do |i| %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<a href="<%= i.split('&')[1] %>"><%= i.split('&')[2] %></a>
+				<span style="float:left;" class="label label-info"><%= i.split('&')[0] %></span>
+				
+			</div>
+			<div class="panel-body">
+			<span style="float:left;">
+			<%= i.split('&')[3] %>
+			</span>
+				<span style="font-size: 90%; font-style: italic; float:right;">
+				<% if i.split('&')[5].to_i == 0 %>
+				<%= 'меньше часа назад' %>
+					<% else %>
+				<%=	i.split('&')[5]
+				%> 
+					ч. назад
+					<% end %>
+				</span>
+			</div>
+		</div>
+	<% end %> 
+<% end %>  
+</div>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
