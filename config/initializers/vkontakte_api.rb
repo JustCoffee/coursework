@@ -2,7 +2,7 @@ VkontakteApi.configure do |config|
   # Authorization parameters (not needed when using an external authorization):
   # config.app_id       = '123'
   # config.app_secret   = 'AbCdE654'
-   config.redirect_uri = 'http://api.vkontakte.ru/blank.html'
+  # config.redirect_uri = 'http://api.vkontakte.ru/blank.html'
   
   # Faraday adapter to make requests with:
   # config.adapter = :net_http
