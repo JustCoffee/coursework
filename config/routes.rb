@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   get 'main/index'
 
-  get 'sessions/new'
-
   match '/resourses/change_cat' => 'resourses#change_cat', :via => 'post'
   #get  '/resourses/change_cat', to: 'resourses#change_cat'
   # The priority is based upon order of creation: first created -> highest priority.
