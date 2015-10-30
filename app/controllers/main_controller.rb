@@ -58,7 +58,8 @@ def resourse_parse(u, categ)
 	
 end
 
-	def index
+def index
+	unless current_user.category.nil?
 		@result = Array.new()
 		result_1 = Array.new()	
 		result_title = Array.new()
@@ -93,5 +94,6 @@ end
 		end
 		merge()
 		puts @result
+	end
 	end
 end
